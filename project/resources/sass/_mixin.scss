@@ -1,0 +1,35 @@
+@charset "utf-8";
+//使用する場合は@include borderBox; のように記述
+
+//clearfix 使用する場合は
+//任意のセレクタ { @include clearfix; } のように記述する
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}
+
+//hover時の透過
+// ** マウスオーバーで透過 **
+//
+// $ratio : 透過する割合（0～1の間で指定）
+//
+@mixin opacity($ratio :0.7) {
+	opacity: $ratio;
+}
+
+// ** 文字サイズ出力 **
+// $size : 文字サイズ（デフォルトはサイトによって異なるので毎回指定する）
+@mixin fontsize($size: $font-size) {
+	font-size: $size;
+	font-size: ($size / 16px) * 1rem;
+}
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+サイト固有の追加項目
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
